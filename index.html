@@ -1,40 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="./Styles/style.css" />
-    <title>Churrascômetro</title>
+    <meta name="description" content="Calcule a quantidade de carne, cerveja e bebidas para o seu churrasco de forma rápida e fácil.">
+    <link rel="stylesheet" type="text/css" href="./Styles/style.css">
+    <title>Churrascômetro | Calculadora de Churrasco</title>
 </head>
 
-<body background="./assents/churrasco.jpg" bgproperties="fixed">
-    
+<body>
 
     <div class="container">
-        <h1>Churrascômetro</h1>
-        <input id="adultos" name="adultos" type="number" placeholder="Adultos">
-        <input id="criancas" name="criancas" type="number" placeholder="Crianças">
-        <input id="duracao" name="duracao" type="number" placeholder="Duração (h)">
-         
-        <button onclick="calcular()">Calcular</button>
+        <h1>Churrascômetro 🍗</h1>
+        <p class="subtitle">Calcule o que você vai precisar para o churrasco</p>
 
+        <form id="form-churrasco" onsubmit="return false;">
+            <label for="adultos">Adultos</label>
+            <input id="adultos" name="adultos" type="number" min="0" placeholder="Ex: 10" required>
 
+            <label for="criancas">Crianças</label>
+            <input id="criancas" name="criancas" type="number" min="0" placeholder="Ex: 5" value="0">
 
-        <div id="resultado">
+            <label for="duracao">Duração (horas)</label>
+            <input id="duracao" name="duracao" type="number" min="1" placeholder="Ex: 4" required>
 
-        </div>
+            <button type="button" onclick="calcular()">Calcular</button>
+        </form>
+
+        <div id="resultado" class="resultado"></div>
     </div>
-
-
-
 
     <script src="./Scripts/script.js"></script>
 </body>
-
-
-
-
-
 
 </html>
